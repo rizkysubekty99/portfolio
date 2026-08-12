@@ -1,0 +1,135 @@
+.projectsSection {
+  background: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important; /* Reset padding from general glass-card to control layout */
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .projectImage {
+  transform: scale(1.08);
+}
+
+.content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex-grow: 1;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.card:hover .projectTitle {
+  color: var(--accent-cyan);
+}
+
+.projectDesc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techBadge {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: var(--accent-cyan);
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+
+/* Specific colors for tech badges to pop */
+.card:nth-child(even) .techBadge {
+  color: var(--accent-violet);
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.25rem;
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+}
+
+.projectLink:hover {
+  color: #ffffff;
+}
+
+.linkIcon {
+  stroke-width: 2px;
+}
+
+.card:nth-child(odd) .projectLink:hover {
+  color: var(--accent-cyan);
+}
+
+.card:nth-child(even) .projectLink:hover {
+  color: var(--accent-violet);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .imageContainer {
+    height: 180px;
+  }
+  
+  .content {
+    padding: 1.5rem;
+  }
+}

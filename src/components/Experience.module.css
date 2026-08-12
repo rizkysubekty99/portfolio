@@ -1,0 +1,143 @@
+.experienceSection {
+  background: relative;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto 0;
+  padding-left: 2.5rem;
+}
+
+/* Timeline Vertical Line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 7px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-violet), rgba(255, 255, 255, 0.05));
+}
+
+.item {
+  position: relative;
+  margin-bottom: 3.5rem;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+/* Glowing timeline marker dot */
+.dot {
+  position: absolute;
+  left: -2.5rem;
+  top: 0.5rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 3px solid var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.item:nth-child(even) .dot {
+  border-color: var(--accent-violet);
+  box-shadow: 0 0 10px var(--accent-violet);
+}
+
+.item:hover .dot {
+  transform: scale(1.3);
+  background: #ffffff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.role {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.company {
+  font-size: 1rem;
+  color: var(--accent-cyan);
+  font-weight: 500;
+}
+
+.item:nth-child(even) .company {
+  color: var(--accent-violet);
+}
+
+.period {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+
+.descList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.descItem {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.5;
+}
+
+.descItem::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: var(--accent-cyan);
+  font-size: 0.8rem;
+}
+
+.item:nth-child(even) .descItem::before {
+  color: var(--accent-violet);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 1.75rem;
+  }
+  
+  .dot {
+    left: -1.75rem;
+    width: 12px;
+    height: 12px;
+    top: 0.6rem;
+  }
+
+  .timeline::before {
+    left: 5px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

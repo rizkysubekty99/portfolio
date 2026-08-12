@@ -1,0 +1,87 @@
+.skillsSection {
+  background: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.categoryTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.75rem;
+}
+
+.categoryIcon {
+  color: var(--accent-cyan);
+}
+
+.badgeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skillBadge {
+  padding: 0.6rem 1.1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+/* Hover glow states based on column or category to create a beautiful rainbow glow */
+.card:nth-child(1) .skillBadge:hover {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: var(--accent-cyan);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+.card:nth-child(2) .skillBadge:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: var(--accent-violet);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+.card:nth-child(3) .skillBadge:hover {
+  background: rgba(236, 72, 153, 0.1);
+  border-color: var(--accent-magenta);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
