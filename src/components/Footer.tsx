@@ -18,9 +18,14 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <span className={styles.copyright}>
-          &copy; {currentYear} {personalInfo.name}. All rights reserved.
-        </span>
+        <div className={styles.content}>
+          <p className={styles.tagline}>
+            Building practical solutions with technology, automation, and AI.
+          </p>
+          <span className={styles.copyright}>
+            &copy; {currentYear} {personalInfo.name}. All rights reserved.
+          </span>
+        </div>
         <a href="#home" onClick={handleScrollToTop} className={styles.topLink} aria-label="Scroll to top of page">
           Back to Top
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

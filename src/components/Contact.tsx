@@ -44,14 +44,14 @@ export default function Contact() {
   ) => {
     e.preventDefault();
 
-    console.log('🔥 CONTACT FORM SUBMIT');
+    console.log('CONTACT FORM SUBMIT');
     console.log('FORM DATA:', formData);
 
     setIsSubmitting(true);
 
     setStatus({
       type: 'loading',
-      message: 'Mengirim pesan...',
+      message: 'Sending message...',
     });
 
     try {
@@ -71,13 +71,13 @@ export default function Contact() {
 
       if (!response.ok || !result.success) {
         throw new Error(
-          result.message || 'Gagal mengirim pesan.'
+          result.message || 'Failed to send message.'
         );
       }
 
       setStatus({
         type: 'success',
-        message: '✓ Pesan berhasil dikirim ke Telegram.',
+        message: 'Message sent successfully via Telegram.',
       });
 
       setFormData({
@@ -93,8 +93,8 @@ export default function Contact() {
         type: 'error',
         message:
           error instanceof Error
-            ? `✕ ${error.message}`
-            : '✕ Gagal mengirim pesan.',
+            ? error.message
+            : 'Failed to send message.',
       });
     } finally {
       setIsSubmitting(false);
@@ -121,9 +121,7 @@ export default function Contact() {
             </h3>
 
             <p className={styles.description}>
-              I&apos;m currently open to new opportunities,
-              collaborations, or freelance projects. Feel free
-              to shoot me a message!
+              Have a project, technical challenge, or automation idea? Let&apos;s talk.
             </p>
 
             <div className={styles.infoDetails}>
@@ -156,7 +154,7 @@ export default function Contact() {
                 <div className={styles.infoText}>
 
                   <span className={styles.infoLabel}>
-                    Email Me
+                    Email
                   </span>
 
                   <a
@@ -167,7 +165,6 @@ export default function Contact() {
                   </a>
 
                 </div>
-
               </div>
 
               <div className={styles.infoItem}>
@@ -204,7 +201,6 @@ export default function Contact() {
                   </span>
 
                 </div>
-
               </div>
 
             </div>
@@ -304,7 +300,7 @@ export default function Contact() {
                   htmlFor="phone-input"
                   className={styles.label}
                 >
-                  No. HP
+                  Phone Number
                 </label>
 
                 <input
@@ -314,7 +310,7 @@ export default function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   className={styles.input}
-                  placeholder="Contoh: 081234567890"
+                  placeholder="Example: 081234567890"
                   required
                 />
 

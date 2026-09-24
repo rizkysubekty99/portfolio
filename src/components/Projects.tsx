@@ -8,7 +8,7 @@ export default function Projects() {
   return (
     <section id="projects" className={styles.projectsSection}>
       <div className="section-container">
-        <h2 className="section-title">My Projects</h2>
+        <h2 className="section-title">Selected Projects</h2>
         <div className={styles.grid}>
           {projects.map((project) => (
             <div key={project.id} className={`glass-card ${styles.card}`}>
@@ -19,14 +19,17 @@ export default function Projects() {
                   className={styles.projectImage}
                   loading="lazy"
                 />
+                {project.projectType && (
+                  <span className={styles.projectType}>{project.projectType}</span>
+                )}
               </div>
               <div className={styles.content}>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
                 <p className={styles.projectDesc}>{project.description}</p>
                 
                 <div className={styles.techList}>
-                  {project.techStack.map((tech, idx) => (
-                    <span key={idx} className={styles.techBadge}>
+                  {project.techStack.map((tech, techIdx) => (
+                    <span key={techIdx} className={styles.techBadge}>
                       {tech}
                     </span>
                   ))}

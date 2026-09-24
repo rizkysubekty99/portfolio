@@ -2,10 +2,36 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
-export const metadata: Metadata = { title: "Rizky Subekty | Universal Full-Stack Engineer | AI & System Integration", 
-  description: "Portfolio website of Rizky Subekty, a professional Full-Stack Engineer specializing in building modern, scalable, and reliable web applications.", 
-  keywords: [ "Rizky Subekty", "Full-Stack Engineer", "Full-Stack Developer", "Software Engineer", "Web Developer", "Backend Developer", "Frontend Developer", ], 
-  authors: [{ name: "Rizky Subekty" }], };
+export const metadata: Metadata = {
+  title: "Rizky Subekty | Application Support Engineer, Full-Stack Developer & AI Automation",
+  description: "Application Support Engineer and Full-Stack Developer focused on application support, web development, AI automation, APIs, databases, and modern digital solutions.",
+  keywords: [
+    "Rizky Subekty",
+    "Application Support Engineer",
+    "Full-Stack Developer",
+    "Software Engineer",
+    "Web Developer",
+    "Backend Developer",
+    "Frontend Developer",
+    "AI Automation",
+    "Go Developer",
+    "Next.js Developer",
+    "PostgreSQL",
+    "Indonesia",
+  ],
+  authors: [{ name: "Rizky Subekty" }],
+  openGraph: {
+    title: "Rizky Subekty | Application Support Engineer & Full-Stack Developer",
+    description: "Application Support Engineer and Full-Stack Developer focused on application support, web development, AI automation, APIs, databases, and modern digital solutions.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rizky Subekty | Application Support Engineer & Full-Stack Developer",
+    description: "Application Support Engineer and Full-Stack Developer focused on application support, web development, AI automation, APIs, databases, and modern digital solutions.",
+  },
+};
 
 export default function RootLayout({
   children,

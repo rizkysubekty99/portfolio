@@ -3,6 +3,7 @@ export interface Project {
   title: string;
   description: string;
   techStack: string[];
+  projectType?: string;
   githubUrl?: string;
   demoUrl?: string;
   imageUrl: string;
@@ -25,6 +26,7 @@ export interface PersonalInfo {
   name: string;
   title: string;
   bio: string;
+  subtitle: string;
   location: string;
   avatarUrl: string;
   email: string;
@@ -36,23 +38,25 @@ export interface PersonalInfo {
   };
 }
 
+export interface ServiceCard {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
 /* =========================================================
    PERSONAL INFORMATION
 ========================================================= */
 
 export const personalInfo: PersonalInfo = {
   name: 'Rizky Subekty',
-
-  title: 'Universal Full-Stack Engineer',
-
-  bio: 'Universal Full-Stack Engineer and IT Support / Application Analyst with experience in application development, system analysis, troubleshooting, system integration, and enterprise application support. Experienced in building frontend applications, backend services, APIs, databases, and AI-powered solutions using modern technologies.',
-
+  title: 'Application Support Engineer | Full-Stack Developer | AI Automation',
+  bio: 'Application Support Engineer and Full-Stack Developer focused on production application support, troubleshooting, web development, APIs, databases, and modern AI-powered automation solutions.',
+  subtitle: 'Currently expanding into full-stack development with Go, Next.js, PostgreSQL, Docker, and AI/RAG.',
   location: 'Jakarta, Indonesia',
-
   avatarUrl: '/developer_avatar.png',
-
   email: 'rizkysubekty99@gmail.com',
-
   socials: {
     github: 'https://github.com/rizkysubekty99',
     linkedin: 'https://linkedin.com/in/rizkysubekty/',
@@ -63,130 +67,145 @@ export const personalInfo: PersonalInfo = {
 
 
 /* =========================================================
-   TECHNICAL SKILLS
+   TECHNICAL SKILLS - 4 CORE CATEGORIES
 ========================================================= */
 
 export const skillCategories: SkillCategory[] = [
 
   {
-    category: 'Frontend Development',
+    category: '01 — Frontend Development',
     skills: [
-      'React.js',
       'Next.js',
+      'React',
       'TypeScript',
       'JavaScript',
-      'HTML5',
-      'CSS3',
+      'HTML',
+      'CSS',
       'Tailwind CSS',
-      'CSS Modules',
-      'Responsive Web Design',
-      'REST API Integration',
     ],
   },
 
   {
-    category: 'Backend Development',
+    category: '02 — Backend & Database',
     skills: [
-      'Go',
-      'Java',
-      'Node.js',
-      'Express.js',
-      'RESTful API',
-      'Gin',
-      'GORM',
-      'Microservices',
-      'Authentication & Authorization',
-      'JWT',
-      'API Integration',
-    ],
-  },
-
-  {
-    category: 'Database & Data',
-    skills: [
-      'PostgreSQL',
-      'MySQL',
-      'MongoDB',
-      'SQL',
-      'Database Design',
-      'Query Optimization',
-      'Data Processing',
-      'Data Integration',
-    ],
-  },
-
-  {
-    category: 'System Integration',
-    skills: [
+      'Go / Golang',
       'REST API',
-      'Apache Kafka',
-      'Event-Driven Architecture',
+      'PostgreSQL',
+      'MariaDB / MySQL',
+      'Prisma',
+      'SQL',
       'API Integration',
-      'Enterprise System Integration',
-      'Backend Integration',
-      'SCADA Integration',
-      'Data Flow Analysis',
+      'Kafka',
     ],
   },
 
   {
-    category: 'AI & Virtual Assistant',
+    category: '03 — DevOps & System',
     skills: [
-      'AI Integration',
-      'AI-Powered Applications',
-      'Virtual Assistant',
-      'Conversational AI',
-      'LLM Integration',
-      'Knowledge-Based Assistant',
-      'AI Automation',
-    ],
-  },
-
-  {
-    category: 'DevOps & Tools',
-    skills: [
-      'Git',
-      'GitHub',
       'Docker',
-      'CI/CD',
+      'Docker Compose',
+      'Git',
       'Linux',
-      'VS Code',
-      'Postman',
-      'npm',
-      'pnpm',
-      'Vercel',
+      'CI/CD',
+      'System Integration',
+      'Troubleshooting',
     ],
+  },
+
+  {
+    category: '04 — AI & Automation',
+    skills: [
+      'LLM',
+      'RAG',
+      'AI Agents',
+      'Ollama',
+      'Open WebUI',
+      'Qdrant',
+      'n8n',
+      'AI API Integration',
+    ],
+  },
+
+];
+
+/* =========================================================
+   PRIORITY SKILLS (for Hero/HIGHLIGHT)
+========================================================= */
+
+export const prioritySkills: string[] = [
+  'Go',
+  'Next.js',
+  'React',
+  'TypeScript',
+  'PostgreSQL',
+  'REST API',
+  'Docker',
+  'Git',
+  'AI / LLM',
+  'RAG',
+  'n8n',
+  'Kafka',
+];
+
+
+/* =========================================================
+   WHAT I DO - SERVICE CARDS
+========================================================= */
+
+export const whatIDo: ServiceCard[] = [
+  {
+    id: 'app-support',
+    title: 'Application Support',
+    description: 'Troubleshooting production applications, handling incidents, investigating issues, coordinating with development and infrastructure teams, and providing technical support.',
+    icon: 'support',
+  },
+  {
+    id: 'fullstack-dev',
+    title: 'Full-Stack Development',
+    description: 'Building web applications, REST APIs, database-driven systems, and internal tools using modern frontend and backend technologies.',
+    icon: 'code',
+  },
+  {
+    id: 'ai-automation',
+    title: 'AI & Automation',
+    description: 'Building AI assistants, RAG knowledge systems, LLM integrations, and automated workflows using local AI and automation platforms.',
+    icon: 'ai',
+  },
+  {
+    id: 'digital-services',
+    title: 'Digital Services',
+    description: 'Supporting businesses with WordPress, SEO, content, virtual assistance, and practical digital automation through NexaAssist.',
+    icon: 'service',
   },
 ];
 
 
 /* =========================================================
-   PROJECTS
+   PROJECTS - SELECTED (4 PROJECTS)
 ========================================================= */
 
 export const projects: Project[] = [
 
   {
-    id: 'aplikasi-support-newapkt',
+    id: 'apkt-support-integration',
 
-    title: 'Aplikasi Support NewAPKT',
+    title: 'Application Support & APKT Integration',
+
+    projectType: 'Production Support',
 
     description:
-      'A full-stack support application designed to assist application support and operational processes within the APKT ecosystem. The system provides data management, troubleshooting support, cleansing processes, transaction handling, and backend services for operational needs.',
+      'Production application support involving incident handling, troubleshooting, data investigation, API integration, database operations, and coordination with development and infrastructure teams.',
 
     techStack: [
-      'Next.js',
-      'React',
-      'TypeScript',
       'Go',
       'PostgreSQL',
-      'GORM',
-      'REST API',
+      'Kafka',
       'Docker',
+      'REST API',
+      'Application Support',
     ],
 
-    // imageUrl: '/projects/newapkt-support.png',
-     imageUrl: '/projects/project-alpha.png',
+    imageUrl: '/projects/project-alpha.png',
   },
 
   {
@@ -194,19 +213,19 @@ export const projects: Project[] = [
 
     title: 'APKT Outage & Restoration Support',
 
+    projectType: 'Incident Response',
+
     description:
-      'Application support solution for outage and restoration processes, including validation, transaction handling, data backup, status updates, business-rule processing, and integration with APKT transactional data.',
+      'Incident response and restoration support for application availability issues, including monitoring, investigation, coordination, technical updates, and service recovery.',
 
     techStack: [
-      'Next.js',
-      'React',
-      'Go',
-      'PostgreSQL',
-      'GORM',
-      'REST API',
+      'Application Support',
+      'Troubleshooting',
+      'Monitoring',
+      'Incident Management',
+      'System Integration',
     ],
 
-    // imageUrl: '/projects/apkt-outage.png',
     imageUrl: '/projects/project-beta.png',
   },
 
@@ -215,48 +234,49 @@ export const projects: Project[] = [
 
     title: 'National SCADA Integration',
 
+    projectType: 'System Integration',
+
     description:
-      'System integration solution supporting outage events from SCADA systems into enterprise applications through event processing, data validation, Kafka messaging, and outage workflow integration.',
+      'Application and system integration support involving data flow, APIs, databases, messaging infrastructure, and coordination across technical teams.',
 
     techStack: [
-      'Go',
-      'PostgreSQL',
-      'Apache Kafka',
-      'REST API',
-      'SCADA',
+      'API',
+      'Database',
+      'Kafka',
       'System Integration',
+      'Troubleshooting',
     ],
 
-    // imageUrl: '/projects/scada-integration.png',
     imageUrl: '/projects/project-beta.png',
   },
 
   {
-    id: 'ai-virtual-assistant',
+    id: 'ai-knowledge-assistant',
 
-    title: 'AI-Powered Virtual Assistant',
+    title: 'AI Knowledge Assistant',
+
+    projectType: 'Personal AI Project',
 
     description:
-      'An AI-powered Virtual Assistant concept designed to help users access information, interact with application data, answer questions, and support repetitive operational tasks through a conversational interface.',
+      'Building a local AI assistant using Ollama, Open WebUI, Qdrant, and RAG to retrieve technical knowledge and assist with application troubleshooting.',
 
     techStack: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'AI',
+      'Ollama',
+      'Open WebUI',
+      'Qdrant',
+      'RAG',
       'LLM',
-      'REST API',
-      'PostgreSQL',
+      'AI Automation',
     ],
 
-    // imageUrl: '/projects/ai-virtual-assistant.png',
-     imageUrl: '/projects/project-alpha.png',
+    imageUrl: '/projects/project-alpha.png',
   },
+
 ];
 
 
 /* =========================================================
-   PROFESSIONAL EXPERIENCE
+   PROFESSIONAL EXPERIENCE - SIMPLIFIED
 ========================================================= */
 
 export const experiences: Experience[] = [
@@ -271,12 +291,10 @@ export const experiences: Experience[] = [
     period: '2025 - Sekarang',
 
     description: [
-      'Provide application support for the National SCADA Portal used within PLN and PLN Icon Plus.',
-      'Analyze application issues, investigate system behavior, and troubleshoot problems reported by users.',
-      'Support application monitoring, testing, maintenance, and system improvement activities.',
-      'Work with databases, APIs, backend services, and system integrations to identify and resolve technical issues.',
-      'Analyze data flow and application processes to support reliable system operations.',
-      'Collaborate with development teams and stakeholders to ensure application reliability and effective problem resolution.',
+      'Handled application incidents and user issues in production environments.',
+      'Investigated application, database, API, network, and data-processing problems.',
+      'Coordinated with development, infrastructure, and network teams to troubleshoot and resolve incidents.',
+      'Provided technical updates and resolution status to users and stakeholders.',
     ],
   },
 
@@ -290,11 +308,10 @@ export const experiences: Experience[] = [
     period: '2023 - 2025',
 
     description: [
-      'Provided application support for APKT (Aplikasi Pengaduan dan Keluhan Terpadu) used within PLN and PLN Icon Plus.',
-      'Handled user-reported issues by analyzing application behavior, identifying root causes, and providing appropriate solutions.',
+      'Handled user-reported issues by analyzing application behavior and identifying root causes.',
       'Supported application monitoring, troubleshooting, testing, and maintenance activities.',
       'Analyzed application data and processes to identify operational issues.',
-      'Coordinated with development and technical teams to resolve incidents and ensure application reliability.',
+      'Coordinated with technical teams to resolve incidents and ensure application reliability.',
     ],
   },
 
@@ -308,11 +325,10 @@ export const experiences: Experience[] = [
     period: '2020 - 2023',
 
     description: [
-      'Provided application support for APKT (Aplikasi Pengaduan dan Keluhan Terpadu) for PLN and PLN Icon Plus.',
-      'Analyzed and investigated application problems reported by users and provided technical solutions.',
+      'Provided application support for APKT for PLN and PLN Icon Plus operations.',
+      'Analyzed and investigated application problems reported by users.',
       'Supported application availability and functionality for PLN operational activities.',
-      'Performed troubleshooting, application testing, and maintenance activities.',
-      'Collaborated with technical teams and stakeholders to resolve application issues and improve system reliability.',
+      'Collaborated with technical teams to resolve application issues.',
     ],
   },
 
@@ -326,11 +342,10 @@ export const experiences: Experience[] = [
     period: '2018 - 2020',
 
     description: [
-      'Provided application support for APKT (Aplikasi Pengaduan dan Keluhan Terpadu) used by PLN and PLN Icon Plus.',
-      'Analyzed application issues reported by users, investigated root causes, and provided appropriate solutions.',
-      'Monitored application functionality and ensured the system operated according to business and operational requirements.',
+      'Analyzed application issues reported by users and investigated root causes.',
+      'Monitored application functionality and ensured system reliability.',
       'Supported application maintenance and troubleshooting activities.',
-      'Coordinated with technical and development teams to resolve application issues and improve system reliability.',
+      'Coordinated with development teams to improve system reliability.',
     ],
   },
 
@@ -344,9 +359,9 @@ export const experiences: Experience[] = [
     period: '2017 - 2018',
 
     description: [
-      'Performed maintenance and preventive troubleshooting for BNI ATMs in the Purwokerto area.',
-      'Handled technical issues and ensured ATM devices remained operational and available for users.',
-      'Conducted on-site technical inspections, maintenance, and troubleshooting according to operational procedures.',
+      'Performed maintenance and preventive troubleshooting for BNI ATMs.',
+      'Handled technical issues and ensured ATM devices remained operational.',
+      'Conducted on-site technical inspections and maintenance.',
     ],
   },
 
@@ -360,10 +375,10 @@ export const experiences: Experience[] = [
     period: '2017',
 
     description: [
-      'Implemented the APKT (Aplikasi Pengaduan dan Keluhan Terpadu) application for PLN operational units.',
-      'Assisted PLN units during application implementation and ensured the system was properly deployed and ready for operational use.',
-      'Provided technical assistance and guidance to users during the application implementation process.',
-      'Supported users in understanding application workflows and resolving initial implementation issues.',
+      'Implemented the APKT application for PLN operational units.',
+      'Assisted PLN units during application deployment and onboarding.',
+      'Provided technical guidance to users during implementation.',
     ],
   },
+
 ];

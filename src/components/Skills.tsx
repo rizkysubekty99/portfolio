@@ -28,7 +28,7 @@ export default function Skills() {
       );
     }
 
-    if (name.includes('backend')) {
+    if (name.includes('backend') || name.includes('database')) {
       return (
         <svg
           width="20"
@@ -48,7 +48,7 @@ export default function Skills() {
       );
     }
 
-    if (name.includes('database') || name.includes('messaging')) {
+    if (name.includes('devops') || name.includes('system')) {
       return (
         <svg
           width="20"
@@ -61,9 +61,33 @@ export default function Skills() {
           strokeLinejoin="round"
           className={styles.categoryIcon}
         >
-          <ellipse cx="12" cy="5" rx="8" ry="3" />
-          <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" />
-          <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+          <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
+          <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
+          <line x1="6" x2="6.01" y1="6" y2="6" />
+          <line x1="6" x2="6.01" y1="18" y2="18" />
+        </svg>
+      );
+    }
+
+    if (name.includes('ai') || name.includes('automation')) {
+      return (
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={styles.categoryIcon}
+        >
+          <path d="M12 8V4H8" />
+          <rect width="16" height="12" x="4" y="8" rx="2" />
+          <path d="M2 14h2" />
+          <path d="M20 14h2" />
+          <path d="M15 13v2" />
+          <path d="M9 13v2" />
         </svg>
       );
     }
@@ -82,7 +106,6 @@ export default function Skills() {
       >
         <polyline points="16 18 22 12 16 6" />
         <polyline points="8 6 2 12 8 18" />
-        <line x1="12" x2="12" y1="2" y2="22" />
       </svg>
     );
   };
@@ -90,7 +113,7 @@ export default function Skills() {
   return (
     <section id="skills" className={styles.skillsSection}>
       <div className="section-container">
-        <h2 className="section-title">My Technical Skills</h2>
+        <h2 className="section-title">Core Technical Skills</h2>
 
         <div className={styles.grid}>
           {skillCategories.map((cat, idx) => (

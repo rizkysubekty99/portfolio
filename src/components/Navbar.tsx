@@ -10,10 +10,11 @@ export default function Navbar() {
 
   const navLinks = [
     { label: 'Home', href: '#home', id: 'home' },
-    // { label: 'About', href: '#home', id: 'about' },
     { label: 'Skills', href: '#skills', id: 'skills' },
+    { label: 'Services', href: '#what-i-do', id: 'what-i-do' },
     { label: 'Projects', href: '#projects', id: 'projects' },
     { label: 'Experience', href: '#experience', id: 'experience' },
+    { label: 'NexaAssist', href: '#nexaassist', id: 'nexaassist' },
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
