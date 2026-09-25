@@ -1,11 +1,17 @@
 export interface Project {
   id: string;
+  slug: string;
   title: string;
   description: string;
+  shortDescription: string;
   techStack: string[];
   projectType?: string;
+  category: string;
+  status: string;
   githubUrl?: string;
   demoUrl?: string;
+  caseStudyUrl?: string;
+  prototypeUrl?: string;
   imageUrl: string;
 }
 
@@ -189,9 +195,18 @@ export const projects: Project[] = [
   {
     id: 'apkt-support-integration',
 
+    slug: 'application-support-apkt',
+
     title: 'Application Support & APKT Integration',
 
     projectType: 'Production Support',
+
+    category: 'Application Support / System Integration',
+
+    status: 'Professional Project',
+
+    shortDescription:
+      'Production application support involving incident handling, troubleshooting, data investigation, API integration, database operations, and coordination with development and infrastructure teams.',
 
     description:
       'Production application support involving incident handling, troubleshooting, data investigation, API integration, database operations, and coordination with development and infrastructure teams.',
@@ -205,15 +220,60 @@ export const projects: Project[] = [
       'Application Support',
     ],
 
+    caseStudyUrl: '/projects/application-support-apkt',
+
+    imageUrl: '/projects/project-alpha.png',
+  },
+
+  {
+    id: 'it-support-ticket-dashboard',
+
+    slug: 'it-support-ticket-dashboard',
+
+    title: 'IT Support Ticket Dashboard',
+
+    projectType: 'Live Portfolio Project',
+
+    category: 'Application Support / Full-Stack / Dashboard',
+
+    status: 'Live Portfolio Project',
+
+    shortDescription:
+      'A web-based dashboard for monitoring and managing IT support tickets, incidents, priorities, and resolution progress.',
+
+    description:
+      'A web-based IT support dashboard designed to manage, monitor, and visualize support tickets, helping teams track incidents, priorities, statuses, and resolution workflows.',
+
+    techStack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Dashboard',
+      'Ticket Management',
+    ],
+
+    demoUrl: 'https://ticketitsupport.vercel.app/',
+
+    caseStudyUrl: '/projects/it-support-ticket-dashboard',
+
     imageUrl: '/projects/project-alpha.png',
   },
 
   {
     id: 'apkt-outage-restoration',
 
+    slug: 'apkt-outage-restoration',
+
     title: 'APKT Outage & Restoration Support',
 
     projectType: 'Incident Response',
+
+    category: 'Incident Management / Application Support',
+
+    status: 'Professional Project',
+
+    shortDescription:
+      'Incident response and restoration support for application availability issues, including monitoring, investigation, coordination, technical updates, and service recovery.',
 
     description:
       'Incident response and restoration support for application availability issues, including monitoring, investigation, coordination, technical updates, and service recovery.',
@@ -226,15 +286,26 @@ export const projects: Project[] = [
       'System Integration',
     ],
 
+    caseStudyUrl: '/projects/apkt-outage-restoration',
+
     imageUrl: '/projects/project-beta.png',
   },
 
   {
     id: 'national-scada-integration',
 
+    slug: 'national-scada-integration',
+
     title: 'National SCADA Integration',
 
     projectType: 'System Integration',
+
+    category: 'System Integration / Application Support',
+
+    status: 'Professional Project',
+
+    shortDescription:
+      'Application and system integration support involving data flow, APIs, databases, messaging infrastructure, and coordination across technical teams.',
 
     description:
       'Application and system integration support involving data flow, APIs, databases, messaging infrastructure, and coordination across technical teams.',
@@ -247,15 +318,26 @@ export const projects: Project[] = [
       'Troubleshooting',
     ],
 
+    caseStudyUrl: '/projects/national-scada-integration',
+
     imageUrl: '/projects/project-beta.png',
   },
 
   {
     id: 'ai-knowledge-assistant',
 
+    slug: 'ai-knowledge-assistant',
+
     title: 'AI Knowledge Assistant',
 
     projectType: 'Personal AI Project',
+
+    category: 'AI / RAG / Automation',
+
+    status: 'Personal Project · In Development',
+
+    shortDescription:
+      'Building a local AI assistant using Ollama, Open WebUI, Qdrant, and RAG to retrieve technical knowledge and assist with application troubleshooting.',
 
     description:
       'Building a local AI assistant using Ollama, Open WebUI, Qdrant, and RAG to retrieve technical knowledge and assist with application troubleshooting.',
@@ -268,6 +350,8 @@ export const projects: Project[] = [
       'LLM',
       'AI Automation',
     ],
+
+    caseStudyUrl: '/projects/ai-knowledge-assistant',
 
     imageUrl: '/projects/project-alpha.png',
   },

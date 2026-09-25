@@ -8,11 +8,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  const navLinks = [
+  const navLinks: Array<{ label: string; href: string; id: string; isRoute?: boolean }> = [
     { label: 'Home', href: '#home', id: 'home' },
     { label: 'Skills', href: '#skills', id: 'skills' },
     { label: 'Services', href: '#what-i-do', id: 'what-i-do' },
-    { label: 'Projects', href: '#projects', id: 'projects' },
+    { label: 'Projects', href: '/projects', id: 'projects', isRoute: true },
     { label: 'Experience', href: '#experience', id: 'experience' },
     { label: 'NexaAssist', href: '#nexaassist', id: 'nexaassist' },
     { label: 'Contact', href: '#contact', id: 'contact' },
@@ -43,8 +43,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = (href: string, id: string) => {
+  const handleLinkClick = (href: string, id: string, isRoute?: boolean) => {
     setIsOpen(false);
+    if (isRoute) {
+      window.location.href = href;
+      return;
+    }
     setActiveSection(id);
     const element = document.getElementById(id);
     if (element) {
@@ -67,7 +71,7 @@ export default function Navbar() {
                 className={`${styles.navLink} ${activeSection === link.id ? styles.activeLink : ''}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  handleLinkClick(link.href, link.id);
+                  handleLinkClick(link.href, link.id, link.isRoute);
                 }}
               >
                 {link.label}

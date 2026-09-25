@@ -1,20 +1,10 @@
-.projectsSection {
-  background: relative;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
-  margin-top: 1.5rem;
-}
-
 .card {
   display: flex;
   flex-direction: column;
-  padding: 0 !important; /* Reset padding from general glass-card to control layout */
+  padding: 0 !important;
   overflow: hidden;
   border-radius: 20px;
+  cursor: default;
 }
 
 .imageContainer {
@@ -65,18 +55,6 @@
   backdrop-filter: blur(4px);
 }
 
-.card:nth-child(even) .projectType {
-  background: rgba(139, 92, 246, 0.9);
-}
-
-.card:nth-child(3) .projectType {
-  background: rgba(236, 72, 153, 0.9);
-}
-
-.card:nth-child(4) .projectType {
-  background: rgba(6, 182, 212, 0.9);
-}
-
 .content {
   padding: 2rem;
   display: flex;
@@ -85,11 +63,27 @@
   flex-grow: 1;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category {
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: var(--font-heading);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .projectTitle {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--text-primary);
   transition: color 0.3s ease;
+  line-height: 1.3;
 }
 
 .card:hover .projectTitle {
@@ -97,9 +91,9 @@
 }
 
 .projectDesc {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
   flex-grow: 1;
 }
 
@@ -110,32 +104,24 @@
 }
 
 .techBadge {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   padding: 0.3rem 0.75rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 6px;
-  color: var(--accent-cyan);
   font-family: var(--font-heading);
   font-weight: 500;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-/* Specific colors for tech badges to pop */
-.card:nth-child(even) .techBadge {
-  color: var(--accent-violet);
-}
-
-.card:nth-child(3) .techBadge {
-  color: var(--accent-magenta);
-}
-
-.card:nth-child(4) .techBadge {
-  color: var(--accent-cyan);
-}
+.variantCyan .techBadge { color: var(--accent-cyan); }
+.variantViolet .techBadge { color: var(--accent-violet); }
+.variantMagenta .techBadge { color: var(--accent-magenta); }
 
 .links {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding-top: 1.25rem;
@@ -144,48 +130,54 @@
 .projectLink {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
+  gap: 0.4rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  color: var(--text-secondary);
   font-family: var(--font-heading);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  transition: all 0.25s ease;
+  background: rgba(255, 255, 255, 0.03);
 }
 
-.projectLink:hover {
-  color: #ffffff;
+.linkCaseStudy {
+  color: var(--text-primary);
 }
 
-.linkIcon {
-  stroke-width: 2px;
+.linkCaseStudy:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
-.card:nth-child(odd) .projectLink:hover {
-  color: var(--accent-cyan);
+.linkExternal {
+  color: var(--text-secondary);
 }
 
-.card:nth-child(even) .projectLink:hover {
-  color: var(--accent-violet);
+.linkExternal:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
-.card:nth-child(3) .projectLink:hover {
-  color: var(--accent-magenta);
-}
+.variantCyan .linkCaseStudy:hover,
+.variantCyan .linkExternal:hover { color: var(--accent-cyan); border-color: rgba(6, 182, 212, 0.4); }
+.variantViolet .linkCaseStudy:hover,
+.variantViolet .linkExternal:hover { color: var(--accent-violet); border-color: rgba(139, 92, 246, 0.4); }
+.variantMagenta .linkCaseStudy:hover,
+.variantMagenta .linkExternal:hover { color: var(--accent-magenta); border-color: rgba(236, 72, 153, 0.4); }
 
-.card:nth-child(4) .projectLink:hover {
-  color: var(--accent-cyan);
-}
-
-/* Responsive design */
+/* Responsive */
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .imageContainer {
     height: 180px;
   }
-  
+
   .content {
     padding: 1.5rem;
   }
@@ -193,5 +185,19 @@
   .projectType {
     font-size: 0.7rem;
     padding: 0.3rem 0.6rem;
+  }
+
+  .projectStatus {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .links {
+    gap: 0.5rem;
+  }
+
+  .projectLink {
+    font-size: 0.82rem;
+    padding: 0.45rem 0.85rem;
   }
 }
