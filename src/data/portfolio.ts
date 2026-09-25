@@ -256,7 +256,7 @@ export const projects: Project[] = [
 
     caseStudyUrl: '/projects/it-support-ticket-dashboard',
 
-    imageUrl: '/projects/project-alpha.png',
+    imageUrl: '/projects/IT Support Ticket Dashboard.png',
   },
 
   {
